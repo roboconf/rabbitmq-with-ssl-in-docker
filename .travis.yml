@@ -1,6 +1,6 @@
 sudo: false
 
-language: bash
+language: java
 
 services: 
   - docker
