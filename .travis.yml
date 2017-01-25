@@ -1,6 +1,15 @@
 sudo: false
 
-language : bash
+language: bash
 
-services : 
+services: 
   - docker
+
+before_install:  
+  - sudo apt-get update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+
+install: true
+
+script:
+- cd tests && ./build.sh  && ./test.sh  

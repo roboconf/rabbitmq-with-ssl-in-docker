@@ -1,5 +1,3 @@
-Dockerfile~
+*~
 create_image.sh
 delete_image.sh
-openssl.cnf~
-ssl.sh~
