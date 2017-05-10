@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Launch a Docker container from rabbitmq-ssl image 
-IMAGE_NAME=test-rabbitmq-ssl
+IMAGE_NAME=rabbitmq-with-ssl
 SUCCESS=true
 TMP_DIR=/tmp/rabbitmq-ssl/
 mkdir -p $TMP_DIR
