@@ -1,15 +1,21 @@
-sudo: false
-
+sudo: required
 language: java
 
-services: 
+# We need Docker.
+services:
   - docker
 
+# We need a recent version of Docker.
+# At the time this file was created, Travis CI still uses Docker 1.8
+# while we need at least Docker 1.9 (and --build-arg parameters).
 before_install:  
   - sudo apt-get update
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
+# Skip the default Maven command launched by Travis.
+# By default, it is "mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
 install: true
 
+# Run the scripts.
 script:
-- cd tests && ./build.sh  && ./test.sh  
+- cd tests && ./build.sh  && ./test.sh
